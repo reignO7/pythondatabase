@@ -1,6 +1,6 @@
-import sqlite3
+import MySQLdb
 
-con = sqlite3.connect("studentdatabase.db")
+con = MySQLdb.connect(host='localhost',user='root',passwd='password271997',db='sakila')
 sql = con.cursor()
 
 add = "add"
@@ -20,13 +20,12 @@ class Student:
 		self.lname = lname
 
 def createTable(tables):
-	sql.execute('''CREATE TABLE IF NOT EXISTS tables
-			   (idnum TEXT, course TEXT, fname TEXT, mname TEXT, lname TEXT)''')
+	sql.execute("CREATE TABLE IF NOT EXISTS tables(idnum TEXT, course TEXT, fname TEXT, mname TEXT, lname TEXT)")
 
 
 def add(sdata):
-	sql.execute('''INSERT INTO tables(idnum,course,fname,mname,lname)
-				VALUES(?,?,?,?,?)''',(sdata.idnum,sdata.course,sdata.fname,sdata.mname,sdata.lname))
+	sql.execute("INSERT INTO tables(idnum,course,fname,mname,lname) VALUES(%s,%s,%s,%s,%s)"
+				,(sdata.idnum,sdata.course,sdata.fname,sdata.mname,sdata.lname))
 
 	con.commit()
 
@@ -74,7 +73,7 @@ def update():
 			con.execute("UPDATE tables set course = ? where idnum = ?", (newcourse,idnum1))
 			con.commit()
 
-		updateAgain = raw_input("\nWhat to change another thing from this student?(yes or no): ")
+		updateAgain = raw_input("\nWant to change another thing from this student?(yes or no): ")
 		if updateAgain == "No" or updateAgain == "no" or updateAgain == "NO":
 			update3 = 0
 
