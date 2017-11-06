@@ -36,13 +36,13 @@ def prints():
 
 def search():
 	idnum1 = raw_input("Enter id number: ")
-	sql.execute("SELECT * FROM tables where idnum = ?", (idnum1,))
+	sql.execute("SELECT * FROM tables where idnum = %s", (idnum1,))
 	for row in sql.fetchall():
 		print row
 
 def delete():
 	del1 = raw_input("Enter id number: ")
-	sql.execute("DELETE from tables where idnum = ?", (del1,))
+	sql.execute("DELETE from tables where idnum = %s", (del1,))
 	con.commit()
 
 def update():
@@ -58,19 +58,19 @@ def update():
 
 		if choice == 1:
 			newfname = raw_input("Enter first name: ")
-			con.execute("UPDATE tables set fname = ? where idnum = ?", (newfname,idnum1))
+			con.execute("UPDATE tables set fname = %s where idnum = %s", (newfname,idnum1))
 			con.commit()
 		elif choice == 2:
 			newmname = raw_input("Enter middle name: ")
-			con.execute("UPDATE tables set mname = ? where idnum = ?", (newmname,idnum1))
+			con.execute("UPDATE tables set mname = %s where idnum = %s", (newmname,idnum1))
 			con.commit()
 		elif choice == 3:
 			newlname = raw_input("Enter last name: ")
-			con.execute("UPDATE tables set lname = ? where idnum = ?", (newlname,idnum1))
+			con.execute("UPDATE tables set lname = %s where idnum = %s", (newlname,idnum1))
 			con.commit()
 		elif choice == 4:
 			newcourse = raw_input("Enter course: ")
-			con.execute("UPDATE tables set course = ? where idnum = ?", (newcourse,idnum1))
+			con.execute("UPDATE tables set course = %s where idnum = %s", (newcourse,idnum1))
 			con.commit()
 
 		updateAgain = raw_input("\nWant to change another thing from this student?(yes or no): ")
