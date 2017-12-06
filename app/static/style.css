@@ -1,0 +1,112 @@
+
+body {
+    background-image: url("IITLOGO.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+} 
+
+h1 {
+    text-align: center;
+    background-color: maroon;
+    padding: 5px;
+    color: white;
+    font-family: courier;
+    font-size: 15px;  
+
+}
+
+input[type=text]{
+	background-color: white;
+	color: black;
+	border: solid #ADD8E6;
+	padding: 6px;
+	border-radius: 1px;
+	box-sizing: border-box;
+}
+input[type=submit]{
+	background-color: maroon;
+	color: white;
+	border: solid white;
+	padding: 5px;
+	border-radius: 1px;
+	box-sizing: border-box;
+	font-weight:bold;
+}
+input[type=text]:focus {
+	background-color: #f9ebf2;
+
+
+}
+input[type=button]{
+	background-color: transparent;
+	color: black;
+	border: solid #ccc;
+	padding: 4px;
+	border-radius: 4px;
+	box-sizing: border-box;
+	font-weight:bold;
+
+}
+#college-menu {
+    width: 400px;
+}
+
+#college-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    font-family: palatino;
+}
+
+#college-menu a:hover {
+    background-color: #ccc;
+}
+  
+#college-menu a.active {
+    background-color: maroon;
+    color: white;
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: maroon;
+  border: 1.5px solid white;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 80px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  height: 50px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 15px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+

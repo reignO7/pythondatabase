@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Registration</title>
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+</head>
+<style>
+img {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+</style>
+<body>
+<div>
+<h1>
+<font color="white"><form action = "/searchGet" method = "POST">
+<input type = "text" name="search"/>  <input type="submit" value="Search Student"/></form></font>
+<font color="white"><div class="container">
+    {% include 'message.html' %}
+    {% block body %}{% endblock%}
+</div></font>
+</h1>
+</div>
+
+<div id='college-menu'>
+<ul>
+    <li><a href="/view" target="_self"><span>View Student</span></a></li>
+    <li><a href="/studentCourse" target="_self"><span>View Student with Courses</span></a></li>
+    <li><a href="/adder" target="_self"><span>Add Student</span></a></li>
+    <li><a href="/deletepage" target="_self"><span>Delete Student</span></a></li>
+    <li><a href="/updateGet" target="_self"><span>Update Student</span></a></li>
+    <li><a href="/addercourse" target="_self"><span>Add Course</span></a></li>
+    <li><a href="/viewCourse" target="_self"><span>View Course<span></a></li>
+    <li><a href="/deleteCourse" target="_self"><span>Delete Course</span></a></li>
+    <li><a href="/updateGetCourse" target="_self"><span>Update Course</span><br></a></li>
+</ul>
+</div>
+
+</body>
+
+
+
+</html>
